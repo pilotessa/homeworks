@@ -9,5 +9,4 @@ $result = 0;
 foreach ($arr as $value) {
     $result += $value;
 }
-unset($value);
 echo $result;

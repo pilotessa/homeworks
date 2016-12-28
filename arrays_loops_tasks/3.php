@@ -9,5 +9,4 @@ $result = 0;
 foreach ($arr as $value) {
     $result += $value ** 2;
 }
-unset($value);
 echo $result;
