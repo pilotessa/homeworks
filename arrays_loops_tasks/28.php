@@ -19,8 +19,8 @@
 </head>
 <body>
 <div class="container">
-    <h1>Таблица умножения</h1>
     <table class="table table-bordered">
+        <caption>Таблица умножения</caption>
         <tr>
             <th class="text-right">&nbsp;</th>
             <th class="text-right">2</th>

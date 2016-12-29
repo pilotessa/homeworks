@@ -28,7 +28,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 </head>
 <body>
 <?=isset($result) ? $result : ''?>
-<form method="post">
+<form action="" method="post">
     <p>
         <label for="number">Введите число</label><br>
         <input type="text" name="number" id="number">
