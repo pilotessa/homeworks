@@ -22,7 +22,7 @@ unset($result);
 echo "<table>\n";
 echo "<tr>\n";
 echo "<th>&nbsp;</th>\n";
-foreach (array_keys(current($multiArr)) as $multiplier2) {
+foreach (array_keys(reset($multiArr)) as $multiplier2) {
     echo "<th>{$multiplier2}</th>\n";
 }
 echo "</tr>\n";
