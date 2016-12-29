@@ -7,7 +7,9 @@
 // Решение с использованием двух циклов for находится в 28.php
 
 // Инициализируем двумерный массив с индексами от 2 до 9
-$multiArr = array_fill(2, 8, array_fill(2, 8, 0));
+$start = 2;
+$end = 9;
+$multiArr = array_fill($start, $end - $start + 1, array_fill($start, $end - $start + 1, 0));
 // Заполняем массив значениями
 foreach ($multiArr as $multiplier1 => &$multiRow) {
     foreach ($multiRow as $multiplier2 => &$result) {
