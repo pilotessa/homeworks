@@ -5,6 +5,7 @@
  */
 
 $arr = [4, 2, 5, 19, 13, 0, 10];
+// Используем do-while для остановки выполнения хода программы (http://php.net/manual/ru/control-structures.do.while.php)
 do {
     foreach ($arr as $e) {
         if ($e == 2 || $e == 3 || $e == 4) {
