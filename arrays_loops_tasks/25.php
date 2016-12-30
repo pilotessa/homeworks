@@ -21,7 +21,8 @@ echo "<p>Максимальное значение: {$arr[$indexMax]}</p>";
 echo "<p>Минимальное значение: {$arr[$indexMin]}</p>";
 
 // Меняем их местами
-list($arr[$indexMin], $arr[$indexMax]) = [$arr[$indexMax], $arr[$indexMin]];
+//list($arr[$indexMin], $arr[$indexMax]) = [$arr[$indexMax], $arr[$indexMin]]; // Вариант 1
+$arr[$indexMax] = $arr[$indexMax] + $arr[$indexMin] - ($arr[$indexMin] = $arr[$indexMax]); // Вариант 2
 echo '<p>Полученный массив</p>';
 echo '<pre>';
 print_r($arr);
