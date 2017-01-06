@@ -7,9 +7,9 @@
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $number = isset($_POST['number']) ? $_POST['number'] : false;
     $digit = isset($_POST['digit']) ? $_POST['digit'] : false;
-    if (is_numeric($number) && is_numeric($digit)) {
-        // Int -> string -> array
-        $digits = str_split(strval($number));
+    if (is_numeric($number) && is_numeric($digit) && strlen($digit) == 1) {
+        // String -> array
+        $digits = str_split($number);
         $counts = array_count_values($digits);
         $count = isset($counts[$digit]) ? $counts[$digit] : 0;
         $result = "<p>Число {$number} содержит {$count} вхождений цифры {$digit}</p>\n";

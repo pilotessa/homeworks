@@ -8,8 +8,8 @@
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $number = isset($_POST['number']) ? $_POST['number'] : false;
     if (is_numeric($number)) {
-        // Int -> string -> array
-        $digits = str_split(strval($number));
+        // String -> array
+        $digits = str_split($number);
         $sum = array_sum($digits);
         $result = "<p>Сумма цифр числа {$number} равняется {$sum}</p>\n";
     } else {
