@@ -7,9 +7,9 @@
 
 function getCommonWords($a, $b) {
     // Удалим знаки пунктуации
-    $punctuation = ['.', ',', ';', ':', '-', '!', '?'];
-    $aFiltered = str_replace($punctuation, '', $a);
-    $bFiltered = str_replace($punctuation, '', $b);
+    $punctuation = ['.', ',', ';', ':', '–', '- ', '!', '?'];
+    $aFiltered = str_replace($punctuation, ' ', $a);
+    $bFiltered = str_replace($punctuation, ' ', $b);
 
     // Разобъем строку на слова
     $arrA = explode(' ', $aFiltered);
