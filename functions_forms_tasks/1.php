@@ -24,8 +24,8 @@ function getCommonWords($a, $b) {
 }
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $text1 = filter_input(INPUT_GET, 'text1', FILTER_SANITIZE_STRING);
-    $text2 = filter_input(INPUT_GET, 'text2', FILTER_SANITIZE_STRING);
+    $text1 = filter_input(INPUT_POST, 'text1', FILTER_SANITIZE_STRING);
+    $text2 = filter_input(INPUT_POST, 'text2', FILTER_SANITIZE_STRING);
 
     if ($text1 && $text2) {
         $result = getCommonWords($text1, $text2);
@@ -37,12 +37,35 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 include 'include/header.php';
 ?>
 
-<h2>1.php</h2>
-<p class="lead">
-    Создать форму с двумя элементами textarea. При отправке формы скрипт должен выдавать только те слова, которые есть и
-    в первом и во втором поле ввода. Реализацию это логики необходимо поместить в функцию getCommonWords($a, $b),
-    которая будет возвращать массив с общими словами.
-</p>
+    <h2>1.php</h2>
+    <p class="lead">
+        Создать форму с двумя элементами textarea. При отправке формы скрипт должен выдавать только те слова, которые есть и
+        в первом и во втором поле ввода. Реализацию это логики необходимо поместить в функцию getCommonWords($a, $b),
+        которая будет возвращать массив с общими словами.
+    </p>
+
+    <div class="panel panel-default">
+        <div class="panel-body">
+            <?php if (isset($error)): ?>
+                <p class="alert alert-danger"><?=$error?></p>
+            <?php endif; ?>
+            <?php if (isset($result)): ?>
+                <pre><?php print_r($result); ?></pre>
+            <?php endif; ?>
+
+            <form action="" method="post">
+                <div class="form-group">
+                    <label for="text1">Текст 1</label>
+                    <textarea name="text1" id="text1" class="form-control" rows="3"><?=isset($text1) ? $text1 : ''?></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="text2">Текст 2</label>
+                    <textarea name="text2" id="text2" class="form-control" rows="3"><?=isset($text2) ? $text2 : ''?></textarea>
+                </div>
+                <button type="submit" class="btn btn-default">Ок</button>
+            </form>
+        </div>
+    </div>
 
 <?php
 include 'include/footer.php';
