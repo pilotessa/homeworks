@@ -17,42 +17,42 @@ $currentTask = basename($_SERVER[ 'PHP_SELF' ]);
             Реализовать с помощью функции.
         </p>
     </a>
-    <a href="3.php" class="list-group-item<?=$currentTask == '3.php' ? ' active' : ''?>">
+    <a href="3.php" class="list-group-item<?=$currentTask == '3.php' ? ' active' : ''?> disabled">
         <h3 class="list-group-item-heading">3.php</h3>
         <p class="list-group-item-text">
             Есть текстовый файл. Необходимо удалить из него все слова, длина которых превыщает N символов. Значение N
             задавать через форму. Проверить работу на кириллических строках - найти ошибку, найти решение.
         </p>
     </a>
-    <a href="4.php" class="list-group-item<?=$currentTask == '4.php' ? ' active' : ''?>">
+    <a href="4.php" class="list-group-item<?=$currentTask == '4.php' ? ' active' : ''?> disabled">
         <h3 class="list-group-item-heading">4.php</h3>
         <p class="list-group-item-text">
             Написать функцию, которая выводит список файлов в заданной директории. Директория задается как параметр
             функции.
         </p>
     </a>
-    <a href="5.php" class="list-group-item<?=$currentTask == '5.php' ? ' active' : ''?>">
+    <a href="5.php" class="list-group-item<?=$currentTask == '5.php' ? ' active' : ''?> disabled">
         <h3 class="list-group-item-heading">5.php</h3>
         <p class="list-group-item-text">
             Написать функцию, которая выводит список файлов в заданной директории, которые содержат искомое слово.
             Директория и искомое слово задаются как параметры функции.
         </p>
     </a>
-    <a href="6.php" class="list-group-item<?=$currentTask == '6.php' ? ' active' : ''?>">
+    <a href="6.php" class="list-group-item<?=$currentTask == '6.php' ? ' active' : ''?> disabled">
         <h3 class="list-group-item-heading">6.php</h3>
         <p class="list-group-item-text">
             Создать страницу, на которой можно загрузить несколько фотографий в галерею. Все загруженные фото должны
             помещаться в папку gallery и выводиться на странице в виде таблицы.
         </p>
     </a>
-    <a href="7.php" class="list-group-item<?=$currentTask == '7.php' ? ' active' : ''?>">
+    <a href="7.php" class="list-group-item<?=$currentTask == '7.php' ? ' active' : ''?> disabled">
         <h3 class="list-group-item-heading">7.php</h3>
         <p class="list-group-item-text">
             Создать гостевую книгу, где любой человек может оставить комментарий в текстовом поле и добавить его. Все
             добавленные комментарии выводятся над текстовым полем.
         </p>
     </a>
-    <a href="8.php" class="list-group-item<?=$currentTask == '8.php' ? ' active' : ''?>">
+    <a href="8.php" class="list-group-item<?=$currentTask == '8.php' ? ' active' : ''?> disabled">
         <h3 class="list-group-item-heading">8.php</h3>
         <p class="list-group-item-text">
             Создать гостевую книгу, где любой человек может оставить комментарий в текстовом поле и добавить его. Все
