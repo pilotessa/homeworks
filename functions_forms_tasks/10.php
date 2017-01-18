@@ -47,7 +47,7 @@ include 'include/header.php';
                 <p class="alert alert-danger"><?=$error?></p>
             <?php endif; ?>
             <?php if (isset($result)): ?>
-                <pre><?php print_r($result); ?></pre>
+                <p class="alert alert-success"><?=$result?></p>
             <?php endif; ?>
 
             <form action="" method="post">
