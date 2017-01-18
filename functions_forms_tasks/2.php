@@ -36,7 +36,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if ($text1) {
         $result = getTop3LongWords($text1);
     } else {
-        $error = 'Введите текст 1.';
+        $error = 'Введите текст.';
     }
 }
 
@@ -60,7 +60,7 @@ include 'include/header.php';
 
             <form action="" method="post">
                 <div class="form-group">
-                    <label for="text1">Текст 1</label>
+                    <label for="text1">Текст</label>
                     <textarea name="text1" id="text1" class="form-control" rows="3"><?=isset($text1) ? $text1 : ''?></textarea>
                 </div>
                 <button type="submit" class="btn btn-default">Ок</button>
