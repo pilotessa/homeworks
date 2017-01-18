@@ -4,7 +4,7 @@
  * с помощью функции.
  */
 
-function getTop3Words($a) {
+function getTop3LongWords($a) {
     // Удалим знаки пунктуации
     $punctuation = ['.', ',', ';', ':', '–', '- ', '!', '?'];
     $aFiltered = str_replace($punctuation, ' ', $a);
@@ -34,7 +34,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $text1 = filter_input(INPUT_POST, 'text1', FILTER_SANITIZE_STRING);
 
     if ($text1) {
-        $result = getTop3Words($text1);
+        $result = getTop3LongWords($text1);
     } else {
         $error = 'Введите текст 1.';
     }
