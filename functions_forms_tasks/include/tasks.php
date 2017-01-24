@@ -45,7 +45,7 @@ $currentTask = basename($_SERVER[ 'PHP_SELF' ]);
             помещаться в папку gallery и выводиться на странице в виде таблицы.
         </p>
     </a>
-    <a href="7.php" class="list-group-item<?=$currentTask == '7.php' ? ' active' : ''?> disabled">
+    <a href="7.php" class="list-group-item<?=$currentTask == '7.php' ? ' active' : ''?>">
         <h3 class="list-group-item-heading">7.php</h3>
         <p class="list-group-item-text">
             Создать гостевую книгу, где любой человек может оставить комментарий в текстовом поле и добавить его. Все
