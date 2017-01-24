@@ -6,7 +6,7 @@
 
 function uniqueWordsCount($a) {
     // Удалим знаки пунктуации
-    $punctuation = ['.', ',', ';', ':', '–', '- ', '!', '?'];
+    $punctuation = ['.', ',', ';', ':', '–', '- ', '!', '?', '"'];
     $aFiltered = str_replace($punctuation, ' ', $a);
 
     // Разобъем строку на слова

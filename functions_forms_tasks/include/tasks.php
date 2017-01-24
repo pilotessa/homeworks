@@ -17,7 +17,7 @@ $currentTask = basename($_SERVER[ 'PHP_SELF' ]);
             Реализовать с помощью функции.
         </p>
     </a>
-    <a href="3.php" class="list-group-item<?=$currentTask == '3.php' ? ' active' : ''?> disabled">
+    <a href="3.php" class="list-group-item<?=$currentTask == '3.php' ? ' active' : ''?>">
         <h3 class="list-group-item-heading">3.php</h3>
         <p class="list-group-item-text">
             Есть текстовый файл. Необходимо удалить из него все слова, длина которых превыщает N символов. Значение N

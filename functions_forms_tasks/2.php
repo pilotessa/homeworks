@@ -6,7 +6,7 @@
 
 function getTop3LongWords($a) {
     // Удалим знаки пунктуации
-    $punctuation = ['.', ',', ';', ':', '–', '- ', '!', '?'];
+    $punctuation = ['.', ',', ';', ':', '–', '- ', '!', '?', '"'];
     $aFiltered = str_replace($punctuation, ' ', $a);
 
     // Разобъем строку на слова
