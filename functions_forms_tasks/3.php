@@ -7,7 +7,7 @@
 function removeLongWords($a, $n)
 {
     // Разбиваем строку на слова и разделители
-    $delimiters = '/([\s\d!"#$%&\'()*+,.\/:;<=>?@[\\]^_`{|}~]+)/';
+    $delimiters = '/([\s\d!"#$%&\'()*+,-.\/:;<=>?@[\\]^_`{|}~]+)/';
     $parts = preg_split($delimiters, $a, -1, PREG_SPLIT_DELIM_CAPTURE);
 
     // Отфильтровываем длинные слова
@@ -30,7 +30,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     }
 
     if (empty($_FILES['text1']) || !$_FILES['text1']['size'] || $_FILES['text1']['error'] != UPLOAD_ERR_OK ||
-        mime_content_type($filename = $_FILES['text1']['tmp_name']) != 'text/plain') {
+        mime_content_type($filename = $_FILES['text1']['tmp_name']) != 'text/plain'
+    ) {
         $errors[] = 'Загрузите текстовый файл.';
     }
 
