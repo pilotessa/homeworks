@@ -25,4 +25,4 @@
         <h1><a href="index.php">Задачи по функциям и формам</a></h1>
     </header>
     <div class="row">
-        <article class="col-md-8">
+        <section class="col-md-8">

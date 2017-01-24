@@ -1,4 +1,4 @@
-        </article>
+        </section>
         <aside class="col-md-4">
             <?php include 'include/tasks.php'; ?>
         </aside>

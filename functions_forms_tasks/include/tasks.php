@@ -38,7 +38,7 @@ $currentTask = basename($_SERVER[ 'PHP_SELF' ]);
             Директория и искомое слово задаются как параметры функции.
         </p>
     </a>
-    <a href="6.php" class="list-group-item<?=$currentTask == '6.php' ? ' active' : ''?> disabled">
+    <a href="6.php" class="list-group-item<?=$currentTask == '6.php' ? ' active' : ''?>">
         <h3 class="list-group-item-heading">6.php</h3>
         <p class="list-group-item-text">
             Создать страницу, на которой можно загрузить несколько фотографий в галерею. Все загруженные фото должны
