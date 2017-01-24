@@ -25,6 +25,11 @@ function getFiles($dir)
 
 $dir = __DIR__ . DIRECTORY_SEPARATOR . '4';
 $files = getFiles($dir);
+if (!(is_array($files))) {
+    $error = 'Не могу открыть директорию.';
+} elseif (!$files) {
+    $error = 'В директории нет файлов.';
+}
 
 include 'include/header.php';
 ?>
@@ -36,18 +41,15 @@ include 'include/header.php';
 
     <div class="panel panel-default">
         <div class="panel-body">
-            <?php if (is_array($files)): ?>
-                <?php if (count($files)): ?>
-                    <ul class="alert alert-success list-unstyled">
-                        <?php foreach ($files as $file): ?>
-                            <li><?= $file ?></li>
-                        <?php endforeach; ?>
-                    </ul>
-                <?php else: ?>
-                    <p class="alert alert-warning">В директории нет файлов.</p>
-                <?php endif; ?>
-            <?php else: ?>
-                <p class="alert alert-danger">Не могу открыть директорию.</p>
+            <?php if (isset($error)): ?>
+                <p class="alert alert-danger"><?= $error ?></p>
+            <?php endif; ?>
+            <?php if (!empty($files)): ?>
+                <ul class="alert alert-success list-unstyled">
+                    <?php foreach ($files as $file): ?>
+                        <li><?= $file ?></li>
+                    <?php endforeach; ?>
+                </ul>
             <?php endif; ?>
         </div>
     </div>
