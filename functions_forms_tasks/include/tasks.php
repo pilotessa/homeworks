@@ -31,7 +31,7 @@ $currentTask = basename($_SERVER[ 'PHP_SELF' ]);
             функции.
         </p>
     </a>
-    <a href="5.php" class="list-group-item<?=$currentTask == '5.php' ? ' active' : ''?> disabled">
+    <a href="5.php" class="list-group-item<?=$currentTask == '5.php' ? ' active' : ''?>">
         <h3 class="list-group-item-heading">5.php</h3>
         <p class="list-group-item-text">
             Написать функцию, которая выводит список файлов в заданной директории, которые содержат искомое слово.
