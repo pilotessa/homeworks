@@ -24,7 +24,7 @@ $currentTask = basename($_SERVER[ 'PHP_SELF' ]);
             задавать через форму. Проверить работу на кириллических строках - найти ошибку, найти решение.
         </p>
     </a>
-    <a href="4.php" class="list-group-item<?=$currentTask == '4.php' ? ' active' : ''?> disabled">
+    <a href="4.php" class="list-group-item<?=$currentTask == '4.php' ? ' active' : ''?>">
         <h3 class="list-group-item-heading">4.php</h3>
         <p class="list-group-item-text">
             Написать функцию, которая выводит список файлов в заданной директории. Директория задается как параметр
