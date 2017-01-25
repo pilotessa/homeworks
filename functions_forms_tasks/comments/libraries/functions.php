@@ -3,11 +3,20 @@
  * Функции для работы с коммпентариями
  */
 
+/**
+ * Возвращает список запрещенных слов
+ * @return array
+ */
 function getForbiddenWords()
 {
-    return ['рыба', 'рыбы', 'рыбе', 'рыбу', 'рыбой'];
+    return preg_split('/[\s]+/', getWords(), -1, PREG_SPLIT_NO_EMPTY);
 }
 
+/**
+ * Проверяет наличие запрещенных слов в строке
+ * @param $string
+ * @return bool
+ */
 function checkForbiddenWords($string)
 {
     // Разбиваем строку на слова и разделители
@@ -38,8 +47,17 @@ function getDataCommentsPath()
 }
 
 /**
+ * Возвращает путь к файлу с запрещенными словами
+ * @return string
+ */
+function getDataWordsPath()
+{
+    return getDataDir() . DIRECTORY_SEPARATOR . 'words.txt';
+}
+
+/**
  * Считывает массив комментариев из файла
- * @return bool|mixed
+ * @return bool|array
  */
 function getComments()
 {
@@ -97,6 +115,57 @@ function addComment($name, $message)
         fclose($handler);
 
         $result = TRUE;
+    } else {
+        $result = FALSE;
+    }
+
+    return $result;
+}
+
+/**
+ * Считывает запрещенные слова из файла
+ * @return string
+ */
+function getWords()
+{
+    $fileWords = getDataWordsPath();
+
+    if (file_exists($fileWords)) {
+        $result = file_get_contents($fileWords);
+    } else {
+        $result = '';
+    }
+
+    return $result;
+}
+
+/**
+ * Обновляет список запрещенных слов
+ * @param $words
+ * @return bool
+ */
+function updateWords($words)
+{
+    return file_put_contents(getDataWordsPath(), $words);
+}
+
+/**
+ * Возвращает данные о текущем пользователе
+ * @return string|bool
+ */
+function getUser() {
+    return isset($_SESSION['user']) ? $_SESSION['user'] : FALSE;
+}
+
+/**
+ * @param $login
+ * @param $password
+ * @return string|bool
+ */
+function authenticate($login, $password) {
+    if ($login == 'admin' && $password == 'password') {
+        $_SESSION['user'] = $login;
+        $result = $login;
     } else {
         $result = FALSE;
     }

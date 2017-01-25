@@ -2,15 +2,14 @@
 include 'header.php';
 ?>
 
-    <h2>comments.php</h2>
-    <p class="lead">
-        Написать самостоятельно контактную форму, для ввода-хранения-вывода комментариев. Стилизовать форму и вывод
-        комментариев. Реализовать решение по добавлению слов в «антимат» с помощью отдельной формы и хранить их в
-        отдельном файле.
-    </p>
+    <h3>Комментарии</h3>
 
 <?php if (isset($error)): ?>
     <p class="alert alert-danger"><?= $error ?></p>
+<?php endif; ?>
+
+<?php if (isset($success)): ?>
+    <p class="alert alert-success"><?= $success ?></p>
 <?php endif; ?>
 
 <?php if (!empty($comments)): ?>
@@ -32,7 +31,7 @@ include 'header.php';
                     <textarea name="message" id="message" class="form-control"
                               rows="3"><?= isset($message) ? $message : '' ?></textarea>
                 </div>
-                <button type="submit" class="btn btn-default">Ок</button>
+                <button type="submit" class="btn btn-default">Добавить комментарий</button>
             </form>
         </div>
     </div>

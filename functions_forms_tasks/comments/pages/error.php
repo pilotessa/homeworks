@@ -2,10 +2,11 @@
 include 'header.php';
 ?>
 
-    <p class="alert alert-danger">
-        <strong>Not Found (#404)</strong><br>
-        Страница не найдена.
-    </p>
+    <h3>Ошибка</h3>
+
+<?php if (isset($error)): ?>
+    <p class="alert alert-danger"><?= $error ?></p>
+<?php endif; ?>
 
 <?php
 include 'footer.php';
