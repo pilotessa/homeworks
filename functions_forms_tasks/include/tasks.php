@@ -52,7 +52,7 @@ $currentTask = basename($_SERVER[ 'PHP_SELF' ]);
             добавленные комментарии выводятся над текстовым полем.
         </p>
     </a>
-    <a href="8.php" class="list-group-item<?=$currentTask == '8.php' ? ' active' : ''?> disabled">
+    <a href="8.php" class="list-group-item<?=$currentTask == '8.php' ? ' active' : ''?>">
         <h3 class="list-group-item-heading">8.php</h3>
         <p class="list-group-item-text">
             Создать гостевую книгу, где любой человек может оставить комментарий в текстовом поле и добавить его. Все
