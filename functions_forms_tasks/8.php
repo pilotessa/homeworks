@@ -6,11 +6,20 @@
  * кроме тега <b>.
  */
 
+/**
+ * Возвращает список запрещенных слов
+ * @return array
+ */
 function getForbiddenWords()
 {
     return ['рыба', 'рыбы', 'рыбе', 'рыбу', 'рыбой'];
 }
 
+/**
+ * Проверяет наличие запрещенных слов в строке
+ * @param $string
+ * @return bool
+ */
 function checkForbiddenWords($string)
 {
     // Разбиваем строку на слова и разделители
