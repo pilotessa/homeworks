@@ -21,7 +21,11 @@ function getImageDir()
 function getImageUrl($image)
 {
     $scheme = isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] != 'off' ? 'https://' : 'http://';
-    return $scheme . $_SERVER['SERVER_NAME'] . '/functions_forms_tasks/6/gallery/' . basename($image);
+    $host = $_SERVER['HTTP_HOST'];
+    $uri = rtrim(dirname($_SERVER['PHP_SELF']), '/\\');
+    $extra = '/6/gallery/' . basename($image);
+
+    return "{$scheme}{$host}{$uri}{$extra}";
 }
 
 /**
