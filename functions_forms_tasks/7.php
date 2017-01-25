@@ -131,7 +131,7 @@ include 'include/header.php';
 
 <?php if (!empty($comments)): ?>
     <?php foreach ($comments as $key => $comment): ?>
-        <?= displayComment($comment); ?>
+        <?php displayComment($comment); ?>
     <?php endforeach; ?>
 <?php endif; ?>
 

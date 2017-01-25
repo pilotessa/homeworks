@@ -118,7 +118,7 @@ include 'include/header.php';
 <?php if (!empty($images)): ?>
     <div class="row">
         <?php foreach ($images as $key => $image): ?>
-            <?= displayImage($image); ?>
+            <?php displayImage($image); ?>
             <?php if ($key % 3 == 2): ?>
                 <div class="clearfix visible-md-block visible-lg-block"></div>
             <?php endif; ?>
