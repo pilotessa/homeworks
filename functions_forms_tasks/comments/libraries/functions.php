@@ -1,6 +1,6 @@
 <?php
 /*
- * Функции для работы с коммпентариями
+ * Функции для работы с комментариями
  */
 
 /**
@@ -153,7 +153,8 @@ function updateWords($words)
  * Возвращает данные о текущем пользователе
  * @return string|bool
  */
-function getUser() {
+function getUser()
+{
     return isset($_SESSION['user']) ? $_SESSION['user'] : FALSE;
 }
 
@@ -162,7 +163,8 @@ function getUser() {
  * @param $password
  * @return string|bool
  */
-function authenticate($login, $password) {
+function authenticate($login, $password)
+{
     if ($login == 'admin' && $password == 'password') {
         $_SESSION['user'] = $login;
         $result = $login;
@@ -171,4 +173,14 @@ function authenticate($login, $password) {
     }
 
     return $result;
+}
+
+/**
+ * Удаляет данные о текущем пользователе из сессии
+ * @return bool
+ */
+function logout()
+{
+    unset($_SESSION['user']);
+    return FALSE;
 }

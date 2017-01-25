@@ -1,16 +1,10 @@
 <?php
-include 'header.php';
+include 'parts/header.php';
 ?>
 
     <h3>Настройки</h3>
 
-<?php if (isset($error)): ?>
-    <p class="alert alert-danger"><?= $error ?></p>
-<?php endif; ?>
-
-<?php if (isset($success)): ?>
-    <p class="alert alert-success"><?= $success ?></p>
-<?php endif; ?>
+<?php include 'parts/messages.php'; ?>
 
     <div class="panel panel-default">
         <div class="panel-body">
@@ -26,4 +20,4 @@ include 'header.php';
     </div>
 
 <?php
-include 'footer.php';
+include 'parts/footer.php';

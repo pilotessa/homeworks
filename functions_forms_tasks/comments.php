@@ -13,6 +13,9 @@ require_once 'comments/libraries/functions.php';
 // Получаем текущее действие (по умолчанию 'view')
 $action = isset($_GET['action']) ? $_GET['action'] : 'view';
 
+// Текущий пользователь
+$user = getUser();
+
 switch ($action) {
     case 'view':
         // Добавляем комментарий
@@ -58,7 +61,7 @@ switch ($action) {
         break;
     case 'admin':
         // Только для авторизованных пользователей
-        if ($user = getUser()) {
+        if ($user) {
             // Обновляем список запрещенных слов
             if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 $words = filter_input(INPUT_POST, 'words', FILTER_SANITIZE_STRING);
@@ -105,19 +108,35 @@ switch ($action) {
             //Если все ок, выполняем процедуру авторизации
             if (empty($errors)) {
                 $user = authenticate($login, $password);
-                if (!$user) {
+                if ($user) {
+                    $success = "Привет, {$user}!";
+                } else {
                     $error = 'Неверное имя пользователя или пароль.';
                 }
             } else {
                 $error = join('<br>', $errors);
             }
-        } else {
-            // Текущий пользователь
-            $user = getUser();
         }
 
         // Подключаем шаблон страницы
         include 'comments/pages/login.php';
+
+        break;
+    case 'logout':
+        // Только для авторизованных пользователей
+        if ($user) {
+            // Удаляем данные о текущем пользователе из сессии
+            $success = "Пока, {$user}!";
+            $user = logout();
+
+            // Подключаем шаблон страницы
+            include 'comments/pages/logout.php';
+        } else {
+            // Пользователь не авторизован
+            header("HTTP/1.0 403 Forbidden");
+            $error = 'Вы не авторизованы.';
+            include 'comments/pages/error.php';
+        }
 
         break;
     default:

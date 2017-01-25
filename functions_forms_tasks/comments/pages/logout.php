@@ -2,7 +2,7 @@
 include 'parts/header.php';
 ?>
 
-    <h3>Ошибка</h3>
+    <h3>Выход</h3>
 
 <?php include 'parts/messages.php'; ?>
 

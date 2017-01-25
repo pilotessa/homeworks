@@ -1,16 +1,10 @@
 <?php
-include 'header.php';
+include 'parts/header.php';
 ?>
 
     <h3>Комментарии</h3>
 
-<?php if (isset($error)): ?>
-    <p class="alert alert-danger"><?= $error ?></p>
-<?php endif; ?>
-
-<?php if (isset($success)): ?>
-    <p class="alert alert-success"><?= $success ?></p>
-<?php endif; ?>
+<?php include 'parts/messages.php'; ?>
 
 <?php if (!empty($comments)): ?>
     <?php foreach ($comments as $key => $comment): ?>
@@ -37,4 +31,4 @@ include 'header.php';
     </div>
 
 <?php
-include 'footer.php';
+include 'parts/footer.php';

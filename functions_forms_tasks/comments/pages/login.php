@@ -1,16 +1,12 @@
 <?php
-include 'header.php';
+include 'parts/header.php';
 ?>
 
     <h3>Вход</h3>
 
-<?php if (isset($error)): ?>
-    <p class="alert alert-danger"><?= $error ?></p>
-<?php endif; ?>
+<?php include 'parts/messages.php'; ?>
 
-<?php if (!empty($user)): ?>
-    <p class="alert alert-success">Добро пожаловать, <?= $user ?>!</p>
-<?php else: ?>
+<?php if (empty($user)): ?>
     <div class="panel panel-default">
         <div class="panel-body">
             <p class="alert alert-info">Используйте admin/password для авторизации.</p>
@@ -38,4 +34,4 @@ include 'header.php';
 <?php endif; ?>
 
 <?php
-include 'footer.php';
+include 'parts/footer.php';
