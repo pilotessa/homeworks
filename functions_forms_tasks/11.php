@@ -10,7 +10,8 @@
  * музыканты не годитесь. А король-то — голый. А ларчик просто открывался.А там хоть трава не расти.';
  */
 
-function ucfirstSentences($a) {
+function ucfirstSentences($a)
+{
     // Разобъем строку на предложения
     $sentences = explode('.', $a);
 
@@ -51,23 +52,24 @@ include 'include/header.php';
         Пример:<br><br>
         Входная строка: 'а васька слушает да ест. а воз и ныне там. а вы друзья как ни садитесь, все в музыканты не
         годитесь. а король-то — голый. а ларчик просто открывался.а там хоть трава не расти.';<br><br>
-        Строка, возвращенная функцией :  'А Васька слушает да ест. А воз и ныне там. А вы друзья как ни садитесь, все в
+        Строка, возвращенная функцией : 'А Васька слушает да ест. А воз и ныне там. А вы друзья как ни садитесь, все в
         музыканты не годитесь. А король-то — голый. А ларчик просто открывался.А там хоть трава не расти.';
     </p>
 
     <div class="panel panel-default">
         <div class="panel-body">
             <?php if (isset($error)): ?>
-                <p class="alert alert-danger"><?=$error?></p>
+                <p class="alert alert-danger"><?= $error ?></p>
             <?php endif; ?>
             <?php if (isset($result)): ?>
-                <p class="alert alert-success"><?=$result?></p>
+                <p class="alert alert-success"><?= $result ?></p>
             <?php endif; ?>
 
             <form action="" method="post">
                 <div class="form-group">
                     <label for="text1">Текст</label>
-                    <textarea name="text1" id="text1" class="form-control" rows="3"><?=isset($text1) ? $text1 : ''?></textarea>
+                    <textarea name="text1" id="text1" class="form-control" rows="3"
+                              required><?= isset($text1) ? $text1 : '' ?></textarea>
                 </div>
                 <button type="submit" class="btn btn-default">Ок</button>
             </form>

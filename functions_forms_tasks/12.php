@@ -10,7 +10,8 @@
  * друзья как ни садитесь, все в музыканты не годитесь. А воз и ныне там.А Васька слушает да ест.'
  */
 
-function ucfirstSentences($a) {
+function ucfirstSentences($a)
+{
     // Разобъем строку на предложения
     $sentences = explode('.', $a);
 
@@ -45,25 +46,26 @@ include 'include/header.php';
         Написать функцию, которая в качестве аргумента принимает строку, и форматирует ее таким образом, что предложения
         идут в обратном порядке.<br>
         Пример:<br><br>
-        Входная строка:  'А Васька слушает да ест. А воз и ныне там. А вы друзья как ни садитесь, все в музыканты не
+        Входная строка: 'А Васька слушает да ест. А воз и ныне там. А вы друзья как ни садитесь, все в музыканты не
         годитесь. А король-то — голый. А ларчик просто открывался. А там хоть трава не расти.';<br><br>
-        Строка, возвращенная функцией :  'А там хоть трава не расти. А ларчик просто открывался. А король-то —
+        Строка, возвращенная функцией : 'А там хоть трава не расти. А ларчик просто открывался. А король-то —
         голый. А вы друзья как ни садитесь, все в музыканты не годитесь. А воз и ныне там.А Васька слушает да ест.'
     </p>
 
     <div class="panel panel-default">
         <div class="panel-body">
             <?php if (isset($error)): ?>
-                <p class="alert alert-danger"><?=$error?></p>
+                <p class="alert alert-danger"><?= $error ?></p>
             <?php endif; ?>
             <?php if (isset($result)): ?>
-                <p class="alert alert-success"><?=$result?></p>
+                <p class="alert alert-success"><?= $result ?></p>
             <?php endif; ?>
 
             <form action="" method="post">
                 <div class="form-group">
                     <label for="text1">Текст</label>
-                    <textarea name="text1" id="text1" class="form-control" rows="3"><?=isset($text1) ? $text1 : ''?></textarea>
+                    <textarea name="text1" id="text1" class="form-control" rows="3"
+                              required><?= isset($text1) ? $text1 : '' ?></textarea>
                 </div>
                 <button type="submit" class="btn btn-default">Ок</button>
             </form>

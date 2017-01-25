@@ -63,7 +63,7 @@ include 'include/header.php';
                 <div class="form-group">
                     <label for="word1">Введите слово</label>
                     <input type="text" name="word1" id="word1" class="form-control"
-                           value="<?= isset($word1) ? $word1 : '' ?>">
+                           value="<?= isset($word1) ? $word1 : '' ?>" required>
                 </div>
                 <button type="submit" class="btn btn-default">Ок</button>
             </form>

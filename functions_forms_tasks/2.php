@@ -4,7 +4,8 @@
  * с помощью функции.
  */
 
-function getTop3LongWords($a) {
+function getTop3LongWords($a)
+{
     // Удалим знаки пунктуации
     $punctuation = ['.', ',', ';', ':', '–', '- ', '!', '?', '"'];
     $aFiltered = str_replace($punctuation, ' ', $a);
@@ -19,7 +20,7 @@ function getTop3LongWords($a) {
     $arrA = array_unique($arrA);
 
     // Сортируем массив по длине слов
-    uasort ($arrA, function($a, $b) {
+    uasort($arrA, function ($a, $b) {
         if (strlen($a) == strlen($b)) {
             return 0;
         }
@@ -52,7 +53,7 @@ include 'include/header.php';
     <div class="panel panel-default">
         <div class="panel-body">
             <?php if (isset($error)): ?>
-                <p class="alert alert-danger"><?=$error?></p>
+                <p class="alert alert-danger"><?= $error ?></p>
             <?php endif; ?>
             <?php if (isset($result)): ?>
                 <pre><?php print_r($result); ?></pre>
@@ -61,7 +62,8 @@ include 'include/header.php';
             <form action="" method="post">
                 <div class="form-group">
                     <label for="text1">Текст</label>
-                    <textarea name="text1" id="text1" class="form-control" rows="3"><?=isset($text1) ? $text1 : ''?></textarea>
+                    <textarea name="text1" id="text1" class="form-control" rows="3"
+                              required><?= isset($text1) ? $text1 : '' ?></textarea>
                 </div>
                 <button type="submit" class="btn btn-default">Ок</button>
             </form>

@@ -14,13 +14,13 @@ include 'parts/header.php';
                 <div class="form-group">
                     <label for="login" class="col-sm-2 control-label">Имя</label>
                     <div class="col-sm-10">
-                        <input type="text" class="form-control" name="login" id="login">
+                        <input type="text" class="form-control" name="login" id="login" required>
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="password" class="col-sm-2 control-label">Пароль</label>
                     <div class="col-sm-10">
-                        <input type="password" class="form-control" name="password" id="password">
+                        <input type="password" class="form-control" name="password" id="password" required>
                     </div>
                 </div>
                 <div class="form-group">

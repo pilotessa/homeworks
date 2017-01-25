@@ -69,11 +69,11 @@ include 'include/header.php';
                 <div class="form-group">
                     <label for="number1">N</label>
                     <input type="text" name="number1" id="number1" class="form-control"
-                           value="<?= isset($number1) ? $number1 : '' ?>">
+                           value="<?= isset($number1) ? $number1 : '' ?>" required>
                 </div>
                 <div class="form-group">
                     <label for="text1">Текст</label>
-                    <input type="file" name="text1" id="text1" accept="text/plain" class="form-control">
+                    <input type="file" name="text1" id="text1" accept="text/plain" class="form-control" required>
                 </div>
                 <button type="submit" class="btn btn-default">Ок</button>
             </form>

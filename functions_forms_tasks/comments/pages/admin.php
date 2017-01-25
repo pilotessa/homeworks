@@ -12,7 +12,7 @@ include 'parts/header.php';
                 <div class="form-group">
                     <label for="words">Запрещенные слова</label>
                     <textarea name="words" id="words" class="form-control"
-                              rows="3"><?= isset($words) ? $words : '' ?></textarea>
+                              rows="3" required><?= isset($words) ? $words : '' ?></textarea>
                 </div>
                 <button type="submit" class="btn btn-default">Сохранить</button>
             </form>

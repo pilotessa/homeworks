@@ -14,7 +14,8 @@
  * слива - 3
  */
 
-function arrayCountValuesTop($a) {
+function arrayCountValuesTop($a)
+{
     // Разобъем строку на слова
     $arrA = explode(' ', $a);
 
@@ -47,7 +48,7 @@ include 'include/header.php';
         груша яблоко черешня черешня вишня яблоко вишня вишня черешня вишня черешня груша яблоко черешня черешня вишня
         яблоко вишня вишня черешня черешня груша яблоко черешня вишня';<br>
         <br>
-        Подсчитайте, сколько раз каждый фрукт встречается в этой строке. Выведите  в виде списка в порядке уменьшения
+        Подсчитайте, сколько раз каждый фрукт встречается в этой строке. Выведите в виде списка в порядке уменьшения
         количества:<br><br>
 
         Пример вывода:<br>
@@ -60,12 +61,12 @@ include 'include/header.php';
     <div class="panel panel-default">
         <div class="panel-body">
             <?php if (isset($error)): ?>
-                <p class="alert alert-danger"><?=$error?></p>
+                <p class="alert alert-danger"><?= $error ?></p>
             <?php endif; ?>
             <?php if (isset($result)): ?>
                 <p class="alert alert-success">
                     <?php foreach ($result as $key => $value): ?>
-                        <?="{$key} – {$value}<br>"?>
+                        <?= "{$key} – {$value}<br>" ?>
                     <?php endforeach; ?>
                 </p>
             <?php endif; ?>
@@ -73,7 +74,8 @@ include 'include/header.php';
             <form action="" method="post">
                 <div class="form-group">
                     <label for="text1">Текст</label>
-                    <textarea name="text1" id="text1" class="form-control" rows="3"><?=isset($text1) ? $text1 : ''?></textarea>
+                    <textarea name="text1" id="text1" class="form-control" rows="3"
+                              required><?= isset($text1) ? $text1 : '' ?></textarea>
                 </div>
                 <button type="submit" class="btn btn-default">Ок</button>
             </form>
