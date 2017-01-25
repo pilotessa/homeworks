@@ -1,8 +1,8 @@
 <?php
-$currentTask = basename($_SERVER[ 'PHP_SELF' ]);
+$currentTask = basename($_SERVER['PHP_SELF']);
 ?>
 <div class="list-group">
-    <a href="1.php" class="list-group-item<?=$currentTask == '1.php' ? ' active' : ''?>">
+    <a href="1.php" class="list-group-item<?= $currentTask == '1.php' ? ' active' : '' ?>">
         <h3 class="list-group-item-heading">1.php</h3>
         <p class="list-group-item-text">
             Создать форму с двумя элементами textarea. При отправке формы скрипт должен выдавать только те слова,
@@ -10,49 +10,49 @@ $currentTask = basename($_SERVER[ 'PHP_SELF' ]);
             getCommonWords($a, $b), которая будет возвращать массив с общими словами.
         </p>
     </a>
-    <a href="2.php" class="list-group-item<?=$currentTask == '2.php' ? ' active' : ''?>">
+    <a href="2.php" class="list-group-item<?= $currentTask == '2.php' ? ' active' : '' ?>">
         <h3 class="list-group-item-heading">2.php</h3>
         <p class="list-group-item-text">
             Создать форму с элементом textarea. При отправке формы скрипт должен выдавать ТОП3 длинных слов в тексте.
             Реализовать с помощью функции.
         </p>
     </a>
-    <a href="3.php" class="list-group-item<?=$currentTask == '3.php' ? ' active' : ''?>">
+    <a href="3.php" class="list-group-item<?= $currentTask == '3.php' ? ' active' : '' ?>">
         <h3 class="list-group-item-heading">3.php</h3>
         <p class="list-group-item-text">
             Есть текстовый файл. Необходимо удалить из него все слова, длина которых превыщает N символов. Значение N
             задавать через форму. Проверить работу на кириллических строках - найти ошибку, найти решение.
         </p>
     </a>
-    <a href="4.php" class="list-group-item<?=$currentTask == '4.php' ? ' active' : ''?>">
+    <a href="4.php" class="list-group-item<?= $currentTask == '4.php' ? ' active' : '' ?>">
         <h3 class="list-group-item-heading">4.php</h3>
         <p class="list-group-item-text">
             Написать функцию, которая выводит список файлов в заданной директории. Директория задается как параметр
             функции.
         </p>
     </a>
-    <a href="5.php" class="list-group-item<?=$currentTask == '5.php' ? ' active' : ''?>">
+    <a href="5.php" class="list-group-item<?= $currentTask == '5.php' ? ' active' : '' ?>">
         <h3 class="list-group-item-heading">5.php</h3>
         <p class="list-group-item-text">
             Написать функцию, которая выводит список файлов в заданной директории, которые содержат искомое слово.
             Директория и искомое слово задаются как параметры функции.
         </p>
     </a>
-    <a href="6.php" class="list-group-item<?=$currentTask == '6.php' ? ' active' : ''?>">
+    <a href="6.php" class="list-group-item<?= $currentTask == '6.php' ? ' active' : '' ?>">
         <h3 class="list-group-item-heading">6.php</h3>
         <p class="list-group-item-text">
             Создать страницу, на которой можно загрузить несколько фотографий в галерею. Все загруженные фото должны
             помещаться в папку gallery и выводиться на странице в виде таблицы.
         </p>
     </a>
-    <a href="7.php" class="list-group-item<?=$currentTask == '7.php' ? ' active' : ''?>">
+    <a href="7.php" class="list-group-item<?= $currentTask == '7.php' ? ' active' : '' ?>">
         <h3 class="list-group-item-heading">7.php</h3>
         <p class="list-group-item-text">
             Создать гостевую книгу, где любой человек может оставить комментарий в текстовом поле и добавить его. Все
             добавленные комментарии выводятся над текстовым полем.
         </p>
     </a>
-    <a href="8.php" class="list-group-item<?=$currentTask == '8.php' ? ' active' : ''?>">
+    <a href="8.php" class="list-group-item<?= $currentTask == '8.php' ? ' active' : '' ?>">
         <h3 class="list-group-item-heading">8.php</h3>
         <p class="list-group-item-text">
             Создать гостевую книгу, где любой человек может оставить комментарий в текстовом поле и добавить его. Все
@@ -61,21 +61,21 @@ $currentTask = basename($_SERVER[ 'PHP_SELF' ]);
             комментария всех тегов, кроме тега &lt;b&gt;.
         </p>
     </a>
-    <a href="9.php" class="list-group-item<?=$currentTask == '9.php' ? ' active' : ''?>">
+    <a href="9.php" class="list-group-item<?= $currentTask == '9.php' ? ' active' : '' ?>">
         <h3 class="list-group-item-heading">9.php</h3>
         <p class="list-group-item-text">
             Написать функцию, которая переворачивает строку. Было "abcde", должна выдать "edcba". Ввод текста
             реализовать с помощью формы.
         </p>
     </a>
-    <a href="10.php" class="list-group-item<?=$currentTask == '10.php' ? ' active' : ''?>">
+    <a href="10.php" class="list-group-item<?= $currentTask == '10.php' ? ' active' : '' ?>">
         <h3 class="list-group-item-heading">10.php</h3>
         <p class="list-group-item-text">
             Написать функцию, которая считает количество уникальных слов в тексте. Слова разделяются пробелами. Текст
             должен вводиться с формы.
         </p>
     </a>
-    <a href="11.php" class="list-group-item<?=$currentTask == '11.php' ? ' active' : ''?>">
+    <a href="11.php" class="list-group-item<?= $currentTask == '11.php' ? ' active' : '' ?>">
         <h3 class="list-group-item-heading">11.php</h3>
         <p class="list-group-item-text">
             Написать функцию, которая в качестве аргумента принимает строку, и форматирует ее таким образом, что каждое
@@ -83,30 +83,30 @@ $currentTask = basename($_SERVER[ 'PHP_SELF' ]);
             Пример:<br><br>
             Входная строка: 'а васька слушает да ест. а воз и ныне там. а вы друзья как ни садитесь, все в музыканты не
             годитесь. а король-то — голый. а ларчик просто открывался.а там хоть трава не расти.';<br><br>
-            Строка, возвращенная функцией :  'А Васька слушает да ест. А воз и ныне там. А вы друзья как ни садитесь,
+            Строка, возвращенная функцией : 'А Васька слушает да ест. А воз и ныне там. А вы друзья как ни садитесь,
             все в музыканты не годитесь. А король-то — голый. А ларчик просто открывался.А там хоть трава не расти.';
         </p>
     </a>
-    <a href="12.php" class="list-group-item<?=$currentTask == '12.php' ? ' active' : ''?>">
+    <a href="12.php" class="list-group-item<?= $currentTask == '12.php' ? ' active' : '' ?>">
         <h3 class="list-group-item-heading">12.php</h3>
         <p class="list-group-item-text">
             Написать функцию, которая в качестве аргумента принимает строку, и форматирует ее таким образом, что
             предложения идут в обратном порядке.<br>
             Пример:<br><br>
-            Входная строка:  'А Васька слушает да ест. А воз и ныне там. А вы друзья как ни садитесь, все в музыканты не
+            Входная строка: 'А Васька слушает да ест. А воз и ныне там. А вы друзья как ни садитесь, все в музыканты не
             годитесь. А король-то — голый. А ларчик просто открывался. А там хоть трава не расти.';<br><br>
-            Строка, возвращенная функцией :  'А там хоть трава не расти. А ларчик просто открывался. А король-то —
+            Строка, возвращенная функцией : 'А там хоть трава не расти. А ларчик просто открывался. А король-то —
             голый. А вы друзья как ни садитесь, все в музыканты не годитесь. А воз и ныне там.А Васька слушает да ест.'
         </p>
     </a>
-    <a href="13.php" class="list-group-item<?=$currentTask == '13.php' ? ' active' : ''?>">
+    <a href="13.php" class="list-group-item<?= $currentTask == '13.php' ? ' active' : '' ?>">
         <h3 class="list-group-item-heading">13.php</h3>
         <p class="list-group-item-text">
             Есть строка $string = 'яблоко черешня вишня вишня черешня груша яблоко черешня вишня яблоко вишня вишня
             черешня груша яблоко черешня черешня вишня яблоко вишня вишня черешня вишня черешня груша яблоко черешня
             черешня вишня яблоко вишня вишня черешня черешня груша яблоко черешня вишня';<br>
             <br>
-            Подсчитайте, сколько раз каждый фрукт встречается в этой строке. Выведите  в виде списка в порядке
+            Подсчитайте, сколько раз каждый фрукт встречается в этой строке. Выведите в виде списка в порядке
             уменьшения количества:<br><br>
 
             Пример вывода:<br>
@@ -114,6 +114,14 @@ $currentTask = basename($_SERVER[ 'PHP_SELF' ]);
             черешня – 8<br>
             груша – 5<br>
             слива - 3<br>
+        </p>
+    </a>
+    <a href="comments.php" class="list-group-item<?= $currentTask == 'comments.php' ? ' active' : '' ?>">
+        <h3 class="list-group-item-heading">comments.php</h3>
+        <p class="list-group-item-text">
+            Написать самостоятельно контактную форму, для ввода-хранения-вывода комментариев. Стилизовать форму и вывод
+            комментариев. Реализовать решение по добавлению слов в «антимат» с помощью отдельной формы и хранить их в
+            отдельном файле.
         </p>
     </a>
 </div>
