@@ -106,7 +106,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     //Если все ок, удаляем слова и результат записываем в файл
     if (empty($errors)) {
         $result = addComment($name, $message);
-        if (!$result) {
+        if ($result) {
+            // Успех
+            unset($name);
+            unset($message);
+        } else {
             $error = 'Не могу сохранить комментарий.';
         }
     } else {
@@ -140,11 +144,13 @@ include 'include/header.php';
             <form action="" method="post">
                 <div class="form-group">
                     <label for="name">Имя</label>
-                    <input type="text" name="name" id="name" class="form-control">
+                    <input type="text" name="name" id="name" value="<?= isset($name) ? $name : '' ?>"
+                           class="form-control">
                 </div>
                 <div class="form-group">
                     <label for="message">Сообщение</label>
-                    <textarea name="message" id="message" class="form-control" rows="3"></textarea>
+                    <textarea name="message" id="message" class="form-control"
+                              rows="3"><?= isset($message) ? $message : '' ?></textarea>
                 </div>
                 <button type="submit" class="btn btn-default">Ок</button>
             </form>
