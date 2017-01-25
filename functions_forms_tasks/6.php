@@ -20,7 +20,8 @@ function getImageDir()
  */
 function getImageUrl($image)
 {
-    return 'http://' . $_SERVER['SERVER_NAME'] . '/functions_forms_tasks/6/gallery/' . basename($image);
+    $scheme = isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] != 'off' ? 'https://' : 'http://';
+    return $scheme . $_SERVER['SERVER_NAME'] . '/functions_forms_tasks/6/gallery/' . basename($image);
 }
 
 /**
