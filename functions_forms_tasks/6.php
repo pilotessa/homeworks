@@ -29,6 +29,21 @@ function getImageUrl($image)
 }
 
 /**
+ * Возвращает размер файла в удобочитаемом формате
+ * @param $file
+ * @param int $decimals
+ * @return string
+ */
+function getFilesize($file, $decimals = 1)
+{
+    $bytes = filesize($file);
+    $sz = 'BKMGTP';
+    $factor = floor((strlen($bytes) - 1) / 3);
+
+    return sprintf("%.{$decimals}f", $bytes / pow(1024, $factor)) . @$sz[$factor];
+}
+
+/**
  * Проверяет, является ли файл изображением
  * @param $file
  * @return bool
@@ -57,7 +72,7 @@ function getImages()
             $file = $imageDir . DIRECTORY_SEPARATOR . $filename;
 
             if (is_file($file) && checkMimeType($file)) {
-                $result[] = getImageUrl($file);
+                $result[] = $file;
             }
         }
     } else {
@@ -73,9 +88,15 @@ function getImages()
  */
 function displayImage($image)
 {
+    $filename = basename($image);
+    $url = getImageUrl($image);
     ?>
     <article class="col-md-4">
-        <img src="<?= $image ?>" alt="<?= basename($image) ?>" class="img-responsive thumbnail">
+        <div class="thumbnail" title="<?= $filename ?>" data-toggle="popover" data-trigger="hover"
+             data-placement="bottom"
+             data-content="Тип: <?= mime_content_type($image) ?>. Размер: <?= getFilesize($image) ?>. Изменен: <?= date('d-m-Y', filemtime($image)) ?>.">
+            <img src="<?= $url ?>" alt="<?= $filename ?>" class="img-responsive">
+        </div>
     </article>
     <?php
 }
