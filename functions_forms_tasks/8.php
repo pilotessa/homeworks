@@ -27,7 +27,7 @@ function checkForbiddenWords($string)
     $parts = preg_split($delimiters, $string, -1, PREG_SPLIT_NO_EMPTY);
     // Переводим слова в нижний регистр
     $parts = array_map('mb_strtolower', $parts);
-    
+
     // Есть совпадения с запрещенными словами?
     $result = array_intersect($parts, getForbiddenWords());
     return !count($result);
