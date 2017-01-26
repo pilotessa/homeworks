@@ -62,7 +62,7 @@ function displayImage($image)
  */
 function uploadImage($image)
 {
-    $filename = getTransliterated(basename($image['name']));
+    $filename = getTransliterated($image['name']); // Не нужно использовать basename, так как getTransliterated() удаляет все слэши
     $path = getImageDir() . DIRECTORY_SEPARATOR . $filename;
 
     return move_uploaded_file($image['tmp_name'], $path);
