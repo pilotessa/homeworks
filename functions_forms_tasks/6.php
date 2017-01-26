@@ -34,13 +34,17 @@ function getImageUrl($image)
  * @param int $decimals
  * @return string
  */
-function getFilesize($file, $decimals = 1)
+function getFilesize($file, $precision = 1)
 {
-    $bytes = filesize($file);
-    $sz = 'BKMGTP';
-    $factor = floor((strlen($bytes) - 1) / 3);
-
-    return sprintf("%.{$decimals}f", $bytes / pow(1024, $factor)) . @$sz[$factor];
+    $size = filesize($file);
+    $units = array('B', 'kB', 'MB', 'GB', 'TB', 'PB', 'EB', 'ZB', 'YB');
+    $step = 1024;
+    $i = 0;
+    while (($size / $step) > 0.9) {
+        $size = $size / $step;
+        $i++;
+    }
+    return round($size, $precision) . $units[$i];
 }
 
 /**
