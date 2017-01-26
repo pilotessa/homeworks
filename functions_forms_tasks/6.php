@@ -4,59 +4,9 @@
  * папку gallery и выводиться на странице в виде таблицы.
  */
 
-/**
- * Возвращает путь к директории с изображениями
- * @return string
+/*
+ * Функции работы с изображениями
  */
-function getImageDir()
-{
-    return __DIR__ . DIRECTORY_SEPARATOR . '6' . DIRECTORY_SEPARATOR . 'gallery';
-}
-
-/**
- * Возвращает URL изображения
- * @param $image
- * @return string
- */
-function getImageUrl($image)
-{
-    $scheme = isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] != 'off' ? 'https://' : 'http://';
-    $host = $_SERVER['HTTP_HOST'];
-    $uri = rtrim(dirname($_SERVER['PHP_SELF']), '/\\');
-    $extra = '/6/gallery/' . basename($image);
-
-    return "{$scheme}{$host}{$uri}{$extra}";
-}
-
-/**
- * Возвращает размер файла в удобочитаемом формате
- * @param $file
- * @param int $decimals
- * @return string
- */
-function getFilesize($file, $precision = 1)
-{
-    $size = filesize($file);
-    $units = array('B', 'kB', 'MB', 'GB', 'TB', 'PB', 'EB', 'ZB', 'YB');
-    $step = 1024;
-    $i = 0;
-    while (($size / $step) > 0.9) {
-        $size = $size / $step;
-        $i++;
-    }
-    return round($size, $precision) . $units[$i];
-}
-
-/**
- * Проверяет, является ли файл изображением
- * @param $file
- * @return bool
- */
-function checkMimeType($file)
-{
-    $acceptedMimeTypes = ['image/gif', 'image/jpeg', 'image/pjpeg', 'image/png'];
-    return in_array(mime_content_type($file), $acceptedMimeTypes);
-}
 
 /**
  * Возвращает список файлов изображений
@@ -112,8 +62,87 @@ function displayImage($image)
  */
 function uploadImage($image)
 {
-    $path = getImageDir() . DIRECTORY_SEPARATOR . basename($image['name']);
+    $filename = getTransliterated(basename($image['name']));
+    $path = getImageDir() . DIRECTORY_SEPARATOR . $filename;
+
     return move_uploaded_file($image['tmp_name'], $path);
+}
+
+/*
+ * Вспомогательные функции
+ */
+
+/**
+ * Возвращает путь к директории с изображениями
+ * @return string
+ */
+function getImageDir()
+{
+    return __DIR__ . DIRECTORY_SEPARATOR . '6' . DIRECTORY_SEPARATOR . 'gallery';
+}
+
+/**
+ * Возвращает URL изображения
+ * @param $image
+ * @return string
+ */
+function getImageUrl($image)
+{
+    $scheme = isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] != 'off' ? 'https://' : 'http://';
+    $host = $_SERVER['HTTP_HOST'];
+    $uri = rtrim(dirname($_SERVER['PHP_SELF']), '/\\');
+    $extra = '/6/gallery/' . basename($image);
+
+    return "{$scheme}{$host}{$uri}{$extra}";
+}
+
+/**
+ * Возвращает размер файла в удобочитаемом формате
+ * @param $file
+ * @param int $precision
+ * @return string
+ */
+function getFilesize($file, $precision = 1)
+{
+    $size = filesize($file);
+    $units = array('B', 'kB', 'MB', 'GB', 'TB', 'PB', 'EB', 'ZB', 'YB');
+    $step = 1024;
+    $i = 0;
+    while (($size / $step) > 0.9) {
+        $size = $size / $step;
+        $i++;
+    }
+    return round($size, $precision) . $units[$i];
+}
+
+/**
+ * Переводит имя файла в транслит
+ * @param $s
+ * @return mixed|string
+ */
+function getTransliterated($s)
+{
+    $search = ['а', 'б', 'в', 'г', 'д', 'е', 'ё', 'ж', 'з', 'и', 'й', 'к', 'л', 'м', 'н', 'о', 'п', 'р', 'с', 'т', 'у', 'ф', 'х', 'ц', 'ч', 'ш', 'щ', 'ы', 'э', 'ю', 'я', 'ъ', 'ь', ' '];
+    $replace = ['a', 'b', 'v', 'g', 'd', 'e', 'e', 'j', 'z', 'i', 'y', 'k', 'l', 'm', 'n', 'o', 'p', 'r', 's', 't', 'u', 'f', 'h', 'c', 'ch', 'sh', 'shch', 'y', 'e', 'yu', 'ya', '', '', '-'];
+
+    $s = preg_replace('/\s+/', ' ', $s);
+    $s = trim($s);
+    $s = mb_strtolower($s);
+    $s = str_replace($search, $replace, $s);
+    $s = preg_replace('/[^0-9a-z-_. ]/', '', $s);
+
+    return $s;
+}
+
+/**
+ * Проверяет, является ли файл изображением
+ * @param $file
+ * @return bool
+ */
+function checkMimeType($file)
+{
+    $acceptedMimeTypes = ['image/gif', 'image/jpeg', 'image/pjpeg', 'image/png'];
+    return in_array(mime_content_type($file), $acceptedMimeTypes);
 }
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
