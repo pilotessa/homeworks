@@ -135,7 +135,8 @@ include 'include/header.php';
             <form enctype="multipart/form-data" action="" method="post">
                 <div class="form-group">
                     <label for="image1">Изображение</label>
-                    <input type="file" name="image1" id="image1" accept="image/*" class="form-control" required>
+                    <input type="file" name="image1" id="image1" accept="image/gif, image/jpeg, image/pjpeg, image/png"
+                           class="form-control" required>
                 </div>
                 <button type="submit" class="btn btn-default">Ок</button>
             </form>
