@@ -6,13 +6,15 @@
 
 function searchFiles($dir, $word)
 {
-    $files = glob($dir . DIRECTORY_SEPARATOR . "*{$word}*");
+    // Подавляем вывод сообщения об ошибке для несуществующей директории.
+    // TODO: Задать обработчик ошибок E_WARNING.
+    $files = @scandir($dir);
 
     if ($files) {
         $result = [];
         foreach ($files as $file) {
-            if (is_file($file)) {
-                $result[] = basename($file);
+            if (is_file($dir . DIRECTORY_SEPARATOR . $file) && mb_strpos($file, $word) !== FALSE) {
+                $result[] = $file;
             }
         }
     } else {
