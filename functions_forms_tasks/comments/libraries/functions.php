@@ -3,13 +3,19 @@
  * Функции для работы с комментариями
  */
 
+/*
+ * Символы, по которым строка разделяется на слова
+ */
+$delimiters = '/([\s!"#$%&\'()*+,-.\/:;<=>?@[\\]^_`{|}~]+)/';
+
 /**
  * Возвращает список запрещенных слов
  * @return array
  */
 function getForbiddenWords()
 {
-    return preg_split('/[\s]+/', getWords(), -1, PREG_SPLIT_NO_EMPTY);
+    global $delimiters;
+    return preg_split($delimiters, getWords(), -1, PREG_SPLIT_NO_EMPTY);
 }
 
 /**
@@ -19,8 +25,9 @@ function getForbiddenWords()
  */
 function checkForbiddenWords($string)
 {
+    global $delimiters;
+
     // Разбиваем строку на слова
-    $delimiters = '/([\s\d!"#$%&\'()*+,-.\/:;<=>?@[\\]^_`{|}~]+)/';
     $parts = preg_split($delimiters, $string, -1, PREG_SPLIT_NO_EMPTY);
     // Переводим слова в нижний регистр
     $parts = array_map('mb_strtolower', $parts);
