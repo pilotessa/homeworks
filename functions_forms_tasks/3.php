@@ -7,7 +7,7 @@
 function removeLongWords($a, $n)
 {
     // Разбиваем строку на слова и разделители
-    $delimiters = '/([\s!"#$%&\'()*+,-.\/:;<=>?@[\\]^_`{|}~]+)/';
+    $delimiters = '/(\W+)/u';
     $parts = preg_split($delimiters, $a, -1, PREG_SPLIT_DELIM_CAPTURE);
 
     // Отфильтровываем длинные слова
