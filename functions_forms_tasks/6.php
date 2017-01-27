@@ -145,6 +145,10 @@ function checkMimeType($file)
     return in_array(mime_content_type($file), $acceptedMimeTypes);
 }
 
+/*
+ * Основная функциональность
+ */
+
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if (empty($_FILES['image1']) || !$_FILES['image1']['size'] || $_FILES['image1']['error'] != UPLOAD_ERR_OK ||
         !checkMimeType($_FILES['image1']['tmp_name'])
