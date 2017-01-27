@@ -62,7 +62,7 @@ function displayImage($image)
  */
 function uploadImage($image)
 {
-    $filename = getTransliterated($image['name']); // Не нужно использовать basename, так как getTransliterated() удаляет все слэши
+    $filename = filterFilename($image['name']);
     $path = getImageDir() . DIRECTORY_SEPARATOR . $filename;
 
     return move_uploaded_file($image['tmp_name'], $path);
@@ -116,11 +116,11 @@ function getFilesize($file, $precision = 1)
 }
 
 /**
- * Переводит имя файла в транслит
+ * Приводит имя файла к безопасному виду
  * @param $s
  * @return mixed|string
  */
-function getTransliterated($s)
+function filterFilename($s)
 {
     $search = ['а', 'б', 'в', 'г', 'д', 'е', 'ё', 'ж', 'з', 'и', 'й', 'к', 'л', 'м', 'н', 'о', 'п', 'р', 'с', 'т', 'у', 'ф', 'х', 'ц', 'ч', 'ш', 'щ', 'ы', 'э', 'ю', 'я', 'ъ', 'ь', ' '];
     $replace = ['a', 'b', 'v', 'g', 'd', 'e', 'e', 'j', 'z', 'i', 'y', 'k', 'l', 'm', 'n', 'o', 'p', 'r', 's', 't', 'u', 'f', 'h', 'c', 'ch', 'sh', 'shch', 'y', 'e', 'yu', 'ya', '', '', '-'];
