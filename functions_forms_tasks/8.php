@@ -129,7 +129,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $errors[] = 'Некорректный комментарий.';
     }
 
-    $message = strip_tags($_POST['message'], '<b>');
+    $message = htmlentities(strip_tags($_POST['message'], '<b>')); // Фильтруем текст сообщения
+    $message = str_ireplace(['&lt;b&gt;', '&lt;/b&gt;'], ['<b>', '</b>'], $message); // Возвращаем тег <b>
     if (!$message) {
         $errors[] = 'Введите сообщение.';
     } elseif (!checkForbiddenWords($message)) {
