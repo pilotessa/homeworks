@@ -21,8 +21,13 @@
 </head>
 <body>
 <div class="container">
+    <ol class="breadcrumb">
+        <li><a href="../index.html">Homeworks</a></li>
+        <li><a href="index.php">Задачи по функциям и формам</a></li>
+        <li class="active"><?= basename($_SERVER['PHP_SELF']) ?></li>
+    </ol>
     <header class="page-header">
-        <h1><a href="index.php">Задачи по функциям и формам</a></h1>
+        <h1><?= basename($_SERVER['PHP_SELF']) ?></h1>
     </header>
     <div class="row">
         <section class="col-md-8">

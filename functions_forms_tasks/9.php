@@ -28,7 +28,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 include 'include/header.php';
 ?>
 
-    <h2>9.php</h2>
     <p class="lead">
         Написать функцию, которая переворачивает строку. Было "abcde", должна выдать "edcba". Ввод текста реализовать с
         помощью формы.

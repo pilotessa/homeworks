@@ -21,6 +21,10 @@
 </head>
 <body>
 <div class="container">
+    <ol class="breadcrumb">
+        <li><a href="../index.html">Homeworks</a></li>
+        <li class="active">Задачи по функциям и формам</li>
+    </ol>
     <header class="page-header">
         <h1>Задачи по функциям и формам</h1>
     </header>
