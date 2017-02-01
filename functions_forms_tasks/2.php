@@ -53,7 +53,7 @@ include 'include/header.php';
     <div class="panel panel-default">
         <div class="panel-body">
             <?php if (isset($error)): ?>
-                <p class="alert alert-danger"><?= $error ?></p>
+                <p class="alert alert-danger"><?= htmlentities($error) ?></p>
             <?php endif; ?>
             <?php if (isset($result)): ?>
                 <pre><?php print_r($result); ?></pre>
@@ -63,7 +63,7 @@ include 'include/header.php';
                 <div class="form-group">
                     <label for="text1">Текст</label>
                     <textarea name="text1" id="text1" class="form-control" rows="3"
-                              required><?= isset($text1) ? $text1 : '' ?></textarea>
+                              required><?= isset($text1) ? htmlentities($text1) : '' ?></textarea>
                 </div>
                 <button type="submit" class="btn btn-default">Ок</button>
             </form>

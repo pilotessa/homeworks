@@ -17,13 +17,13 @@ include 'parts/header.php';
             <form action="" method="post">
                 <div class="form-group">
                     <label for="name">Имя</label>
-                    <input type="text" name="name" id="name" value="<?= isset($name) ? $name : '' ?>"
+                    <input type="text" name="name" id="name" value="<?= isset($name) ? htmlentities($name) : '' ?>"
                            class="form-control" required>
                 </div>
                 <div class="form-group">
                     <label for="message">Сообщение</label>
                     <textarea name="message" id="message" class="form-control"
-                              rows="3" required><?= isset($message) ? $message : '' ?></textarea>
+                              rows="3" required><?= isset($message) ? htmlentities($message) : '' ?></textarea>
                 </div>
                 <button type="submit" class="btn btn-default">Добавить комментарий</button>
             </form>

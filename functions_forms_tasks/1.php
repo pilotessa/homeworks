@@ -41,15 +41,14 @@ include 'include/header.php';
     <h2>1.php</h2>
     <p class="lead">
         Создать форму с двумя элементами textarea. При отправке формы скрипт должен выдавать только те слова, которые
-        есть и
-        в первом и во втором поле ввода. Реализацию это логики необходимо поместить в функцию getCommonWords($a, $b),
-        которая будет возвращать массив с общими словами.
+        есть и в первом и во втором поле ввода. Реализацию это логики необходимо поместить в функцию getCommonWords($a,
+        $b), которая будет возвращать массив с общими словами.
     </p>
 
     <div class="panel panel-default">
         <div class="panel-body">
             <?php if (isset($error)): ?>
-                <p class="alert alert-danger"><?= $error ?></p>
+                <p class="alert alert-danger"><?= htmlentities($error) ?></p>
             <?php endif; ?>
             <?php if (isset($result)): ?>
                 <pre><?php print_r($result); ?></pre>
@@ -59,12 +58,12 @@ include 'include/header.php';
                 <div class="form-group">
                     <label for="text1">Текст 1</label>
                     <textarea name="text1" id="text1" class="form-control" rows="3"
-                              required><?= isset($text1) ? $text1 : '' ?></textarea>
+                              required><?= isset($text1) ? htmlentities($text1) : '' ?></textarea>
                 </div>
                 <div class="form-group">
                     <label for="text2">Текст 2</label>
                     <textarea name="text2" id="text2" class="form-control" rows="3"
-                              required><?= isset($text2) ? $text2 : '' ?></textarea>
+                              required><?= isset($text2) ? htmlentities($text2) : '' ?></textarea>
                 </div>
                 <button type="submit" class="btn btn-default">Ок</button>
             </form>

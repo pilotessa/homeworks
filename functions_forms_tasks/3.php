@@ -59,17 +59,18 @@ include 'include/header.php';
     <div class="panel panel-default">
         <div class="panel-body">
             <?php if (isset($error)): ?>
-                <p class="alert alert-danger"><?= $error ?></p>
+                <p class="alert alert-danger"><?= htmlentities($error) ?></p>
             <?php endif; ?>
             <?php if (isset($resultFilename)): ?>
-                <p class="alert alert-success"><a href="<?= $resultFilename ?>" target="_blank">Результат</a></p>
+                <p class="alert alert-success"><a href="<?= htmlentities($resultFilename) ?>"
+                                                  target="_blank">Результат</a></p>
             <?php endif; ?>
 
             <form enctype="multipart/form-data" action="" method="post">
                 <div class="form-group">
                     <label for="number1">N</label>
                     <input type="text" name="number1" id="number1" class="form-control"
-                           value="<?= isset($number1) ? $number1 : '' ?>" required>
+                           value="<?= isset($number1) ? htmlentities($number1) : '' ?>" required>
                 </div>
                 <div class="form-group">
                     <label for="text1">Текст</label>

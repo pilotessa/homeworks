@@ -46,10 +46,10 @@ function displayImage($image)
     $url = getImageUrl($image);
     ?>
     <article class="col-md-4">
-        <div class="thumbnail" title="<?= $filename ?>" data-toggle="popover" data-trigger="hover"
+        <div class="thumbnail" title="<?= htmlentities($filename) ?>" data-toggle="popover" data-trigger="hover"
              data-placement="bottom"
              data-content="Тип: <?= mime_content_type($image) ?>. Размер: <?= getFilesize($image) ?>. Изменен: <?= date('d-m-Y', filemtime($image)) ?>.">
-            <img src="<?= $url ?>" alt="<?= $filename ?>" class="img-responsive">
+            <img src="<?= htmlentities($url) ?>" alt="<?= htmlentities($filename) ?>" class="img-responsive">
         </div>
     </article>
     <?php
@@ -174,7 +174,7 @@ include 'include/header.php';
     </p>
 
 <?php if (isset($error)): ?>
-    <p class="alert alert-danger"><?= $error ?></p>
+    <p class="alert alert-danger"><?= htmlentities($error) ?></p>
 <?php endif; ?>
 
 <?php if (!empty($images)): ?>

@@ -51,12 +51,12 @@ include 'include/header.php';
     <div class="panel panel-default">
         <div class="panel-body">
             <?php if (isset($error)): ?>
-                <p class="alert alert-danger"><?= $error ?></p>
+                <p class="alert alert-danger"><?= htmlentities($error) ?></p>
             <?php endif; ?>
             <?php if (!empty($files)): ?>
                 <ul class="alert alert-success list-unstyled">
                     <?php foreach ($files as $file): ?>
-                        <li><?= $file ?></li>
+                        <li><?= htmlentities($file) ?></li>
                     <?php endforeach; ?>
                 </ul>
             <?php endif; ?>
@@ -65,7 +65,7 @@ include 'include/header.php';
                 <div class="form-group">
                     <label for="word1">Введите слово</label>
                     <input type="text" name="word1" id="word1" class="form-control"
-                           value="<?= isset($word1) ? $word1 : '' ?>" required>
+                           value="<?= isset($word1) ? htmlentities($word1) : '' ?>" required>
                 </div>
                 <button type="submit" class="btn btn-default">Ок</button>
             </form>
