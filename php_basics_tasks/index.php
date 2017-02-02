@@ -1,13 +1,3 @@
-<?php
-$currentTask = !empty($_GET['task']) ? intval($_GET['task']) : 0;
-$filename = "{$currentTask}.php";
-if (file_exists($filename)) {
-    $content = file_get_contents($filename);
-    $contentFiltered = htmlentities($content);
-} else {
-    die();
-}
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -33,26 +23,21 @@ if (file_exists($filename)) {
 <div class="container">
     <ol class="breadcrumb">
         <li><a href="../index.html">Homeworks</a></li>
-        <li><a href="index.php">Задачи по основам PHP</a></li>
-        <li class="active"><?= $filename ?></li>
+        <li class="active">Задачи по основам PHP</li>
     </ol>
     <header class="page-header">
-        <h1><?= $filename ?></h1>
+        <h1>Задачи по основам PHP</h1>
     </header>
-    <div class="row">
-        <section class="col-md-8">
-            <div class="panel panel-default">
-                <div class="panel-body">
-                    <pre><?= $contentFiltered ?></pre>
-                    <hr>
-                    <?php include $filename; ?>
-                </div>
-            </div>
-        </section>
-        <aside class="col-md-4">
-            <?php include 'include/tasks.php'; ?>
-        </aside>
-    </div>
+    <p class="lead">Все задания должны выполняться в папке php_basics_tasks, в отдельных файлах, которые должны
+        называться по номеру задания, например, "17.php".<br>Если задание требует создания нескольких файлов - то такие
+        файлы необходимо размещать в папке, название которой равно номеру задания.</p>
+    <p class="alert alert-info">Вопросы можно задавать на <a href="http://ask.php-academy.kiev.ua/" target="_blank">http://ask.php-academy.kiev.ua/</a>.
+    </p>
+    <?php include 'include/tasks.php'; ?>
+    <hr>
+    <p>
+        <strong>&copy; 2014-2016 <a href="http://php-academy.kiev.ua/" target="_blank">PHP Academy</a></strong>
+    </p>
 </div>
 
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
@@ -61,6 +46,5 @@ if (file_exists($filename)) {
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
         integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
         crossorigin="anonymous"></script>
-<script src="js/main.js"></script>
 </body>
 </html>
