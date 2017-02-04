@@ -30,7 +30,7 @@ function getImages()
             }
         }
     } else {
-        $result = FALSE;
+        $result = false;
     }
 
     return $result;

@@ -73,7 +73,7 @@ function getComments()
         // В начале выводим последние записи
         $result = array_reverse($result);
     } else {
-        $result = FALSE;
+        $result = false;
     }
 
     return $result;
@@ -117,9 +117,9 @@ function addComment($name, $message)
         flock($handler, LOCK_UN);
         fclose($handler);
 
-        $result = TRUE;
+        $result = true;
     } else {
-        $result = FALSE;
+        $result = false;
     }
 
     return $result;
@@ -160,7 +160,7 @@ function updateWords($words)
  */
 function getUser()
 {
-    return isset($_SESSION['user']) ? $_SESSION['user'] : FALSE;
+    return isset($_SESSION['user']) ? $_SESSION['user'] : false;
 }
 
 /**
@@ -174,7 +174,7 @@ function authenticate($login, $password)
         $_SESSION['user'] = $login;
         $result = $login;
     } else {
-        $result = FALSE;
+        $result = false;
     }
 
     return $result;
@@ -187,5 +187,5 @@ function authenticate($login, $password)
 function logout()
 {
     unset($_SESSION['user']);
-    return FALSE;
+    return false;
 }

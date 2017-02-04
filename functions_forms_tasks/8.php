@@ -66,7 +66,7 @@ function getComments()
         // В начале выводим последние записи
         $result = array_reverse($result);
     } else {
-        $result = FALSE;
+        $result = false;
     }
 
     return $result;
@@ -110,9 +110,9 @@ function addComment($name, $message)
         flock($handler, LOCK_UN);
         fclose($handler);
 
-        $result = TRUE;
+        $result = true;
     } else {
-        $result = FALSE;
+        $result = false;
     }
 
     return $result;

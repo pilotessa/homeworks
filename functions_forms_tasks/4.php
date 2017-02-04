@@ -17,7 +17,7 @@ function getFiles($dir)
             }
         }
     } else {
-        $result = FALSE;
+        $result = false;
     }
 
     return $result;

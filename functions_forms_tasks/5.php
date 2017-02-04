@@ -13,12 +13,12 @@ function searchFiles($dir, $word)
     if ($files) {
         $result = [];
         foreach ($files as $file) {
-            if (is_file($dir . DIRECTORY_SEPARATOR . $file) && mb_stripos($file, $word) !== FALSE) {
+            if (is_file($dir . DIRECTORY_SEPARATOR . $file) && mb_stripos($file, $word) !== false) {
                 $result[] = $file;
             }
         }
     } else {
-        $result = FALSE;
+        $result = false;
     }
 
     return $result;
