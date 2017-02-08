@@ -15,7 +15,7 @@ if (file_exists($filename)) {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>Задачи по функциям и формам</title>
+    <title>Задачи по основам PHP</title>
 
     <!-- Bootstrap -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
@@ -41,13 +41,8 @@ if (file_exists($filename)) {
     </header>
     <div class="row">
         <section class="col-md-8">
-            <div class="panel panel-default">
-                <div class="panel-body">
-                    <pre><?= $contentFiltered ?></pre>
-                    <hr>
-                    <?php include $filename; ?>
-                </div>
-            </div>
+            <pre><?= $contentFiltered ?></pre>
+            <?php include $filename; ?>
         </section>
         <aside class="col-md-4">
             <?php include 'include/tasks.php'; ?>
@@ -61,6 +56,5 @@ if (file_exists($filename)) {
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
         integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
         crossorigin="anonymous"></script>
-<script src="js/main.js"></script>
 </body>
 </html>

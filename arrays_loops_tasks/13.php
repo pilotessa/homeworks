@@ -21,18 +21,18 @@ unset($multiRow);
 unset($result);
 
 // Выводим результат в таблицу
-echo "<table>\n";
+echo "<table class=\"table table-bordered\">\n";
 echo "<tr>\n";
-echo "<th>&nbsp;</th>\n";
+echo "<th class=\"text-right\">&nbsp;</th>\n";
 foreach (array_keys(reset($multiArr)) as $multiplier2) {
-    echo "<th>{$multiplier2}</th>\n";
+    echo "<th class=\"text-right\">{$multiplier2}</th>\n";
 }
 echo "</tr>\n";
 foreach ($multiArr as $multiplier1 => $multiRow) {
     echo "<tr>\n";
-    echo "<th>{$multiplier1}</th>\n";
+    echo "<th class=\"text-right\">{$multiplier1}</th>\n";
     foreach ($multiRow as $multiplier2 => $result) {
-        echo "<td>{$result}</td>\n";
+        echo "<td class=\"text-right\">{$result}</td>\n";
     }
     echo "</tr>\n";
 }

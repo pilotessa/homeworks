@@ -1,13 +1,3 @@
-<?php
-$currentTask = !empty($_GET['task']) ? intval($_GET['task']) : 0;
-$filename = "{$currentTask}.php";
-if (file_exists($filename)) {
-    $content = file_get_contents($filename);
-    $contentFiltered = htmlentities($content);
-} else {
-    die();
-}
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -21,7 +11,6 @@ if (file_exists($filename)) {
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
           integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
           crossorigin="anonymous">
-    <link href="css/github.css" type="text/css" rel="stylesheet">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -34,21 +23,21 @@ if (file_exists($filename)) {
 <div class="container">
     <ol class="breadcrumb">
         <li><a href="../index.html">Homeworks</a></li>
-        <li><a href="index.php">Задачи по массивам и циклам</a></li>
-        <li class="active"><?= $filename ?></li>
+        <li class="active">Задачи по массивам и циклам</li>
     </ol>
     <header class="page-header">
-        <h1><?= $filename ?></h1>
+        <h1>Задачи по массивам и циклам</h1>
     </header>
-    <div class="row">
-        <section class="col-md-8">
-            <pre><code data-language="php"><?= $contentFiltered ?></code></pre>
-            <?php include $filename; ?>
-        </section>
-        <aside class="col-md-4">
-            <?php include 'include/tasks.php'; ?>
-        </aside>
-    </div>
+    <p class="lead">Все задания должны выполняться в папке php_basics_tasks, в отдельных файлах, которые должны
+        называться по номеру задания, например, "17.php".<br>Если задание требует создания нескольких файлов - то такие
+        файлы необходимо размещать в папке, название которой равно номеру задания.</p>
+    <p class="alert alert-info">Вопросы можно задавать на <a href="http://ask.php-academy.kiev.ua/" target="_blank">http://ask.php-academy.kiev.ua/</a>.
+    </p>
+    <?php include 'include/tasks.php'; ?>
+    <hr>
+    <p>
+        <strong>&copy; 2014-2016 <a href="http://php-academy.kiev.ua/" target="_blank">PHP Academy</a></strong>
+    </p>
 </div>
 
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
@@ -57,6 +46,5 @@ if (file_exists($filename)) {
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
         integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
         crossorigin="anonymous"></script>
-<script src="js/rainbow-custom.min.js"></script>
 </body>
 </html>

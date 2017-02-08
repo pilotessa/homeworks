@@ -10,8 +10,12 @@ $days = [
     'Четверг',
     'Пятница',
     'Суббота',
-    'Воскресенье'
+    'Воскресенье',
 ];
-foreach ($days as $key => $value) {
-    echo $key > 4 ? "<strong>{$value}</strong><br>\n" : "{$value}<br>\n";
+$weekend = [
+    'Суббота',
+    'Воскресенье',
+];
+foreach ($days as $day) {
+    echo in_array($day, $weekend) ? "<strong>{$day}</strong><br>\n" : "{$day}<br>\n";
 }
