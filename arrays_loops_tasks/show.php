@@ -21,7 +21,14 @@ if (file_exists($filename)) {
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
           integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
           crossorigin="anonymous">
-    <link href="css/github.css" type="text/css" rel="stylesheet">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/default.min.css">
+    <style>
+        .hljs {
+            white-space: pre;
+            overflow-x: auto;
+            background-color: rgb(245, 245, 245);
+        }
+    </style>
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -42,7 +49,7 @@ if (file_exists($filename)) {
     </header>
     <div class="row">
         <section class="col-md-8">
-            <pre><code data-language="php"><?= $contentFiltered ?></code></pre>
+            <pre><code class="html"><?= $contentFiltered ?></code></pre>
             <?php include $filename; ?>
         </section>
         <aside class="col-md-4">
@@ -57,6 +64,7 @@ if (file_exists($filename)) {
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
         integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
         crossorigin="anonymous"></script>
-<script src="js/rainbow-custom.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
 </body>
 </html>
