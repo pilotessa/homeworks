@@ -22,13 +22,7 @@ if (file_exists($filename)) {
           integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
           crossorigin="anonymous">
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/default.min.css">
-    <style>
-        .hljs {
-            white-space: pre;
-            overflow-x: auto;
-            background-color: rgb(245, 245, 245);
-        }
-    </style>
+    <link href="../css/code.css" rel="stylesheet">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -65,6 +59,6 @@ if (file_exists($filename)) {
         integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
         crossorigin="anonymous"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/highlight.min.js"></script>
-<script>hljs.initHighlightingOnLoad();</script>
+<script src="../js/code.js"></script>
 </body>
 </html>

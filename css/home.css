@@ -1,0 +1,17 @@
+aside .panel-title {
+    line-height: 20px;
+}
+
+.panel > .panel-collapse > .list-group:last-child .list-group-item:last-child {
+    border-bottom: 1px solid #ddd;
+}
+
+.panel-footer {
+    border-top: 0;
+}
+
+.fa-inverse {
+    background: #337ab7;
+    padding: 2px 5px;
+    border-radius: 3px;
+}
