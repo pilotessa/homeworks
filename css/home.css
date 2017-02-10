@@ -1,5 +1,16 @@
-aside .panel-title {
-    line-height: 20px;
+html,
+body {
+    height: 100%;
+}
+
+body {
+    padding-bottom: 100px;
+}
+
+.fixed-bottom {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
 }
 
 .panel > .panel-collapse > .list-group:last-child .list-group-item:last-child {

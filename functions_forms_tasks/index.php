@@ -38,10 +38,10 @@
         Вопросы можно задавать на <a href="http://ask.php-academy.kiev.ua/" target="_blank">http://ask.php-academy.kiev.ua/</a>.
     </p>
     <?php include 'include/tasks.php'; ?>
-    <hr>
-    <p>
-        <strong>&copy; 2014-2016 <a href="http://php-academy.kiev.ua/" target="_blank">PHP Academy</a></strong>
-    </p>
+    <footer>
+        <hr>
+        <p>&copy; 2014-2016 <a href="http://php-academy.kiev.ua/" target="_blank">PHP Academy</a></p>
+    </footer>
 </div>
 
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->

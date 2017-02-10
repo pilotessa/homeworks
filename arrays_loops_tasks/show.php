@@ -50,6 +50,10 @@ if (file_exists($filename)) {
             <?php include 'include/tasks.php'; ?>
         </aside>
     </div>
+    <footer>
+        <hr>
+        <p>&copy; 2016-2017 Елена Мухина</p>
+    </footer>
 </div>
 
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
@@ -60,5 +64,6 @@ if (file_exists($filename)) {
         crossorigin="anonymous"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/highlight.min.js"></script>
 <script src="../js/code.js"></script>
+<script src="../js/collapse.js"></script>
 </body>
 </html>

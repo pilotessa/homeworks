@@ -50,6 +50,10 @@ if (file_exists($filename)) {
             <?php include 'include/tasks.php'; ?>
         </aside>
     </div>
+    <footer>
+        <hr>
+        <p>&copy; 2016-2017 Елена Мухина</p>
+    </footer>
 </div>
 
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->

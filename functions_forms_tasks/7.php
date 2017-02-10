@@ -57,7 +57,9 @@ function displayComment($comment)
         <div class="panel-body">
             <?= htmlentities($comment['message']) ?>
         </div>
-        <div class="panel-footer text-right"><?= htmlentities($comment['date']) ?></div>
+        <div class="panel-footer text-right">
+            <small><?= htmlentities($comment['date']) ?></small>
+        </div>
     </article>
     <?php
 }
