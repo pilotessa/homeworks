@@ -2,7 +2,7 @@
 require_once 'config/db.php';
 require_once 'lib/functions.php';
 
-$query = 'SELECT o.officeCode as office_id, COUNT(DISTINCT e.employeeNumber) as employee_count, COUNT(c.customerNumber) as customer_count FROM offices o 
+$query = 'SELECT o.officeCode AS office, COUNT(DISTINCT e.employeeNumber) AS employee_count, COUNT(c.customerNumber) AS customer_count FROM offices o 
 JOIN employees e ON o.officeCode = e.officeCode
 LEFT JOIN customers c ON e.employeeNumber = c.salesRepEmployeeNumber
 GROUP BY o.officeCode';
@@ -11,7 +11,6 @@ $data = $sth->fetchAll(PDO::FETCH_ASSOC);
 
 include 'include/header.php';
 ?>
-
     <p class="lead">
         Получить количество сотрудников и количество заказчиков для каждого офиса.
     </p>

@@ -2,17 +2,18 @@
 require_once 'config/db.php';
 require_once 'lib/functions.php';
 
-$query = 'SELECT CONCAT(e.lastName, " ", e.firstName) AS employee
+$query = 'SELECT e.firstName, e.lastName, COUNT(c.customerNumber) AS customers
 FROM employees e
-LEFT JOIN customers c ON e.employeeNumber = c.salesRepEmployeeNumber
-WHERE c.customerNumber IS NULL';
+JOIN customers c ON e.employeeNumber = c.salesRepEmployeeNumber
+GROUP BY e.employeeNumber
+HAVING COUNT(c.customerNumber) > 5';
 $sth = $dbh->query($query);
 $data = $sth->fetchAll(PDO::FETCH_ASSOC);
 
 include 'include/header.php';
 ?>
     <p class="lead">
-        Получить сотрудников без клиентов.
+        Получить сотрудников, привязанных более чем к 5 клинетам.
     </p>
 
     <pre><code class="sql"><?= $query ?></code></pre>

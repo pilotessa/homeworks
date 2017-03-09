@@ -13,7 +13,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 }
 
 $params = ['customerNumber' => $customerNumber];
-$query = 'SELECT c.contactLastName, c.contactFirstName, SUM(p.amount) as payment, YEAR(p.paymentDate) AS year, MONTH(p.paymentDate) AS month 
+$query = 'SELECT c.contactLastName, c.contactFirstName, SUM(p.amount) AS payment, YEAR(p.paymentDate) AS year, MONTH(p.paymentDate) AS month 
 FROM customers c JOIN payments p ON c.customerNumber = p.customerNumber 
 WHERE c.customerNumber = :customerNumber
 GROUP BY YEAR(p.paymentDate), MONTH(p.paymentDate)';
@@ -23,7 +23,6 @@ $data = $sth->fetchAll(PDO::FETCH_ASSOC);
 
 include 'include/header.php';
 ?>
-
     <p class="lead">
         Получить платежи покупателя по месяцам и годам.
     </p>

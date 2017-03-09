@@ -51,4 +51,20 @@ $currentTask = basename($_SERVER['PHP_SELF']);
             Получить сотрудников без клиентов.
         </p>
     </a>
+    <a href="7.php" class="list-group-item<?= $currentTask == '7.php' ? ' active' : '' ?>">
+        <h3 class="list-group-item-heading">
+            <small>7.php</small>
+        </h3>
+        <p class="list-group-item-text">
+            Получить ТОП 10 продаваемых товаров.
+        </p>
+    </a>
+    <a href="8.php" class="list-group-item<?= $currentTask == '8.php' ? ' active' : '' ?>">
+        <h3 class="list-group-item-heading">
+            <small>8.php</small>
+        </h3>
+        <p class="list-group-item-text">
+            Получить сотрудников, привязанных более чем к 5 клинетам.
+        </p>
+    </a>
 </div>
