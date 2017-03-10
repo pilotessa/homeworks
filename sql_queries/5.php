@@ -23,8 +23,7 @@ include 'include/header.php';
         Получить средний доход на клиента.
     </p>
     <pre><code class="sql"><?= $query1 ?></code></pre>
-    <a class="btn btn-primary" role="button" data-toggle="collapse" href="#collapseOne" aria-controls="collapseOne">Show
-        data</a>
+    <a class="btn btn-primary" role="button" data-toggle="collapse" href="#collapseOne" aria-controls="collapseOne">Показать</a>
     <div id="collapseOne" class="panel-collapse collapse" role="tabpanel">
         <br>
         <?php showData($data1); ?>
@@ -37,8 +36,7 @@ include 'include/header.php';
         Получить средний доход на сотрудника.
     </p>
     <pre><code class="sql"><?= $query2 ?></code></pre>
-    <a class="btn btn-primary" role="button" data-toggle="collapse" href="#collapseTwo" aria-controls="collapseTwo">Show
-        data</a>
+    <a class="btn btn-primary" role="button" data-toggle="collapse" href="#collapseTwo" aria-controls="collapseTwo">Показать</a>
     <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel">
         <br>
         <?php showData($data2); ?>
