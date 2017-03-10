@@ -42,7 +42,7 @@
     <?php include 'include/tasks.php'; ?>
     <footer>
         <hr>
-        <p>&copy; 2016-2017 Елена Мухина</p>
+        <p>&copy; 2014-2016 <a href="http://php-academy.kiev.ua/" target="_blank">PHP Academy</a></p>
     </footer>
 </div>
 

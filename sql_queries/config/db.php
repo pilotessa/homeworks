@@ -1,5 +1,5 @@
 <?php
-$dsn = 'mysql:host=localhost; dbname=classicmodels';
+$dsn = 'mysql:host=localhost;dbname=classicmodels;charset=UTF8';
 $user = 'root';
 $password = '';
 try {

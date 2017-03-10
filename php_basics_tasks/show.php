@@ -52,7 +52,7 @@ if (file_exists($filename)) {
     </div>
     <footer>
         <hr>
-        <p>&copy; 2016-2017 Елена Мухина</p>
+        <p>&copy; 2016-2017 <a href="http://helene.com.ua" target="_blank">Елена Мухина</a></p>
     </footer>
 </div>
 

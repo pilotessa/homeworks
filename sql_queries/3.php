@@ -14,7 +14,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 $params = ['customerNumber' => $customerNumber];
 $query = 'SELECT c.contactLastName, c.contactFirstName, SUM(p.amount) AS payment, YEAR(p.paymentDate) AS year, MONTH(p.paymentDate) AS month 
-FROM customers c JOIN payments p ON c.customerNumber = p.customerNumber 
+FROM customers c JOIN payments p USING (customerNumber)
 WHERE c.customerNumber = :customerNumber
 GROUP BY YEAR(p.paymentDate), MONTH(p.paymentDate)';
 $sth = $dbh->prepare($query);
@@ -29,7 +29,7 @@ include 'include/header.php';
 
     <form class="form-inline" method="post">
         <div class="form-group">
-            <label for="exampleInputName2">Customer</label>
+            <label for="customerNumber">Покупатель</label>
             <select name="customerNumber" id="customerNumber" class="form-control">
                 <?php foreach ($customers as $customer): ?>
                     <option value="<?= $customer['customerNumber'] ?>"<?= $customer['customerNumber'] == $customerNumber ? ' selected' : '' ?>>
@@ -38,7 +38,7 @@ include 'include/header.php';
                 <?php endforeach; ?>
             </select>
         </div>
-        <button type="submit" class="btn btn-default">Select</button>
+        <button type="submit" class="btn btn-primary">Выбрать</button>
     </form>
 
     <br>
