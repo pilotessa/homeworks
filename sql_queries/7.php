@@ -2,9 +2,12 @@
 require_once 'config/db.php';
 require_once 'lib/functions.php';
 
-$query = 'SELECT DISTINCT p.productName AS product, SUM(od.quantityOrdered) AS count
+$query = 'SELECT DISTINCT p.productName AS product, COUNT(p.productCode) AS count
 FROM products p
 JOIN orderdetails od ON p.productCode = od.productCode
+JOIN orders o ON od.orderNumber = o.orderNumber
+JOIN customers c ON c.customerNumber = o.customerNumber
+JOIN payments pa ON pa.customerNumber = c.customerNumber
 GROUP BY p.productCode
 ORDER BY count DESC
 LIMIT 0, 10';
