@@ -1,0 +1,24 @@
+body {
+    padding-top: 70px;
+}
+
+#preview-box {
+    display: none;
+}
+
+#preview-box img {
+    max-width: 320px;
+    max-height: 240px;
+}
+
+body.admin table img {
+    max-width: 100px;
+}
+
+body.admin form {
+    max-width: 400px;
+}
+
+body.admin .alert {
+    max-width: 400px;
+}
